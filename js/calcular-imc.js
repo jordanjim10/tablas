@@ -1,5 +1,14 @@
 
+
+
 var pacientes = document.querySelectorAll(".paciente");
+
+function calcularIMC(peso,altura){
+
+    var imc = peso / (altura * altura);
+    return imc.toFixed(2);
+
+}
 
 for(var i = 0;i<pacientes.length;i++){
 
@@ -31,8 +40,7 @@ for(var i = 0;i<pacientes.length;i++){
     }
 
     if(pesoEsValido && alturaEsValida){
-        var imc = peso / (altura * altura);
-        tdIMC.textContent = imc.toFixed(2);
+        tdIMC.textContent = calcularIMC(peso,altura);
     }
 
 }
